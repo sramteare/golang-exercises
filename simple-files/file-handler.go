@@ -42,7 +42,9 @@ func simpleOpenWriteRead() (string, error) {
 	if err := createDir(); err != nil {
 		return "", err
 	}
-	err := createDefaultFile()
+	if err := createDefaultFile(); err != nil {
+		return "", err
+	}
 
 	file, err := os.Open(FILE_PATH)
 	byts := []byte{}
