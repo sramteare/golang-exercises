@@ -11,3 +11,13 @@ func TestSimpleFileOprations(t *testing.T) {
 		t.Errorf("should return expected text from the file found\n%s", txt)
 	}
 }
+
+func TestSimpleFileIOReadFull(t *testing.T) {
+	txt, err := simpleFileIOReadAll()
+	if err != nil {
+		t.Errorf("Errored %v", err)
+	}
+	if txt != `Hello world!!` {
+		t.Errorf("should return expected text from the file found\n%s", txt)
+	}
+}
