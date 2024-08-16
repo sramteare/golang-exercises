@@ -78,6 +78,7 @@ func simpleFileIOReadAll() (string, error) {
 	}
 	bContent, err := io.ReadAll(f)
 	if err != nil {
+
 		if err != io.EOF {
 			log.Fatalf("Failed to read file %v into buffer; %+v", FILE_PATH, err)
 			return "", err
